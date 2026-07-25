@@ -1,0 +1,67 @@
+** Chapter 2. Computer Architecture Review
+
+*** Know the Concepts
+
+*1. Describe the fetch-execute cycle.*
+    The *fetch-execute cycle* is the process in which the CPU reads in instructions from memory one at a time
+    and executes them. The CPU is responsible for accessing, manipulating, and moving data stored in memory.
+
+        a. The *program counter* tells the computer where to fetch the next instruction from.
+	      - The program counter holds the *memory address* of the next instruction to be executed.
+              - The CPU begins by looking at the program counter and fetching whatever number is stored in memory at the location specified.
+	b. The number stored in memory at the location specified by the program counter is then passed on to the *instruction decoder*, which is
+	responsible for figuring out what the instruction means.
+	      - This includes *what process* needs to take place (e.g. addition, subtraction, multiplication, data movement) and *what memory locations* are going to be involved in this process.
+	      - Computer instructions usually consist of both the actual instruction (program?) and the list of memory locations (data?) that are used to carry it out.
+	c. Then, the computer uses the *data bus* to fetch the memory locations to be used in the calculation.
+	      - The data bus is the connection between the CPU and memory, the actual wire that connects them.
+	      - In the memory of the computer, the wires that go out from the memory are the data bus.
+	d. In addition to memory external to the processor, the processor itself has some special, high-speed memory locations called registers.
+	      - There are 2 kinds of registers: *general registers* and *special-purpose registers*.
+	      - *General-purpose registers* are where the main action happens.
+		    - Addition, subtraction, multiplication, comparisons, and other operations generally use general-purpose registers for processing.
+		    - However, computers have very few general-purpose registers.
+		    - Most information is stored in main memory, brought in to the registers for processing, and then put back into memory when the processing is completed.
+              - *Special-purpose registers* are registers which have very specific purposes.
+	e. Once the CPU has retrieved all needed data, it passes on the data and decoded instruction to the *arithmetic and logic unit* for futher processing.
+	      - Here, the instruction is actually executed.
+	      - After the results of the computation have been calculated, the results are then placed on the data bus and sent to the appropriate location in memory or in a register,
+		as specified by the instruction.
+
+    - Processors have advanced quite a bit in recent years, and are now much more complex.
+    - Although the basic operation is still the same, it is complicated by the use of optimizations (e.g. cache hierarchies, superscalar processors, pipelining, branch prediction, out-of-order execution,
+      microcode translation, coprocessors)
+
+*2. What is a register? How would computation be more difficult without registers?*
+
+*3. How do you represent numbers larger than 255?*
+
+*4. How big are the registers on the machines we will be using?*
+
+*5. How does a computer know how to interpret a given byte or set of bytes of memory?*
+
+*6. What are the addressing modes and what are they used for?*
+
+*7. What does the instruction pointer do?*
+
+*** Use the Concepts
+
+*1. What data would you use in an employee record? How would you lay it out in memory?*
+
+*2. If I had the pointer at the beginning of the employee record above, and wanted to access a particular piece of data inside of it, what addressing mode would I use?*
+
+*3. In base pointer addressing mode, if you have a register holding the value 3122, and an offset of 20, what address would you being trying to access?*
+
+*4. In indexed addressing mode, if the base address is 6512, the index register has a 5, and the multiplier is 4, what address would you be trying to access?*
+
+*5. In indexed addressing mode, if the base address is 123472, the index register has a 0, and the multiplier is 4, what address would you be trying to access?*
+
+*6. In indexed addressing mode, if the base address is 9123478, the index register has a 20, and the multiplier is 1, what address would you be trying to access?*
+
+*** Going Further
+
+*1. What are the minimum number of addressing modes needed for computation?*
+
+*2. Why include addressing modes that aren't strictly needed?*
+
+*3. Research and then describe how pipelining (or one of the other complicating factors) affects the fetch-execute cycle.*
