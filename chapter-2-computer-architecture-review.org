@@ -39,6 +39,7 @@ To represent a number larger than 255, a combination of bytes can be used to rep
 - 4 bytes can be used to represent any number between 0 and 4294967295.
 
 *4. How big are the registers on the machines we will be using?*
+
 Registers are each 4 bytes long, x86 processors have 4-byte words (the size of a typical register is called a computer's _word_ size).
 
 *5. How does a computer know how to interpret a given byte or set of bytes of memory?*
