@@ -32,8 +32,12 @@ A register is a special, high-speed memory location contained within the process
 Computation would be more difficult without registers because the processor would have to perform operations by accessing data stored in far-away memory locations outside of the processor (using the data bus). This would make computation significantly slower and overall less efficient due to constantly having to access data in memory outside of the processor.
 
 *3. How do you represent numbers larger than 255?*
+To represent a number larger than 255, a combination of bytes can be used to represent larger numbers.
+- For example, 2 bytes can be used to represent any number between 0 and 65536.
+- 4 bytes can be used to represent any number between 0 and 4294967295.
 
 *4. How big are the registers on the machines we will be using?*
+Registers are each 4 bytes long, x86 processors have 4-byte words (the size of a typical register is called a computer's _word_ size).
 
 *5. How does a computer know how to interpret a given byte or set of bytes of memory?*
 
