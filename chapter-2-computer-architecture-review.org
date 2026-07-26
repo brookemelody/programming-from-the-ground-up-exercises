@@ -27,11 +27,13 @@
   - Although the basic operation is still the same, it is complicated by the use of optimizations (e.g. cache hierarchies, superscalar processors, pipelining, branch prediction, out-of-order execution, microcode translation, coprocessors)
 
 *2. What is a register? How would computation be more difficult without registers?*
+
 A register is a special, high-speed memory location contained within the processor itself, unlike memory on the outside of the processor.
 
 Computation would be more difficult without registers because the processor would have to perform operations by accessing data stored in far-away memory locations outside of the processor (using the data bus). This would make computation significantly slower and overall less efficient due to constantly having to access data in memory outside of the processor.
 
 *3. How do you represent numbers larger than 255?*
+
 To represent a number larger than 255, a combination of bytes can be used to represent larger numbers.
 - For example, 2 bytes can be used to represent any number between 0 and 65536.
 - 4 bytes can be used to represent any number between 0 and 4294967295.
