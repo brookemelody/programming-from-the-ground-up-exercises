@@ -35,8 +35,8 @@ Computation would be more difficult without registers because the processor woul
 *3. How do you represent numbers larger than 255?*
 
 To represent a number larger than 255, a combination of bytes can be used to represent larger numbers.
-- For example, 2 bytes can be used to represent any number between 0 and 65536.
-- 4 bytes can be used to represent any number between 0 and 4294967295.
+- For example, 2 bytes can be used to represent any number between 0 and 65536 -> each byte can be between [0-255] (256 possible values) -> 256^2 = 65536
+- 4 bytes can be used to represent any number between 0 and 4294967295 -> 256^4 = 4294967296
 
 *4. How big are the registers on the machines we will be using?*
 
