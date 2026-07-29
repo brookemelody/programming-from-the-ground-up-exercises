@@ -44,6 +44,8 @@ Registers are each 4 bytes long, x86 processors have 4-byte words (the size of a
 
 *5. How does a computer know how to interpret a given byte or set of bytes of memory?*
 
+A computer stores values all the same way regardless of if they are meant to be interpreted as an address, a number, ASCII code, and so forth. It cannot tell the difference between these values initially, but a value becomes an ASCII code when you attempt to display it, and a value becomes an address when you try to look up the byte it points to. A value becomes an instruction if the special-purpose register (instruction pointer) points to it. Aside from this, the computer generally has no way of innately knowing the difference between programs and other types of data.
+
 *6. What are the addressing modes and what are they used for?*
 
 *7. What does the instruction pointer do?*
