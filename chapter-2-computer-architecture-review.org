@@ -1,3 +1,4 @@
+
 ** Chapter 2. Computer Architecture Review
 
 *** Know the Concepts
@@ -46,7 +47,18 @@ Registers are each 4 bytes long, x86 processors have 4-byte words (the size of a
 
 A computer stores values all the same way regardless of if they are meant to be interpreted as an address, a number, ASCII code, and so forth. It cannot tell the difference between these values initially, but a value becomes an ASCII code when you attempt to display it, and a value becomes an address when you try to look up the byte it points to. A value becomes an instruction if the special-purpose register (instruction pointer) points to it. Aside from this, the computer generally has no way of innately knowing the difference between programs and other types of data.
 
+Computers are very exact, they will do exactly what the programmers tells them to do. The computer will execute your instructions in the exact order you specify, even if it doesn't make sense. Therefore, it is the programmer's responsibility to know exactly how they have their data arranged in memory.
+
 *6. What are the addressing modes and what are they used for?*
+
+Processors have various different ways of accessing data, known as *addressing modes.* The addressing modes are:
+- *Immediate mode*: The data to access is embedded in the instruction itself.
+  - For example, if we want to initialize a register to 0, instead of giving the computer an address to read the 0 from, we would specify immediate mode, and give it the number 0.
+- *Register addressing mode*: The instruction contains a register to access, rather than a memory location. The rest of the modes will deal with addresses.
+- *Direct addressing mode*: TODO
+- *Indexed addressing mode*: TODO
+- *Indirect addressing mode*: TODO
+- *Base pointer addressing mode*: TODO
 
 *7. What does the instruction pointer do?*
 
