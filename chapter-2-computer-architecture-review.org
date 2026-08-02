@@ -55,10 +55,21 @@ Processors have various different ways of accessing data, known as *addressing m
 - *Immediate mode*: The data to access is embedded in the instruction itself.
   - For example, if we want to initialize a register to 0, instead of giving the computer an address to read the 0 from, we would specify immediate mode, and give it the number 0.
 - *Register addressing mode*: The instruction contains a register to access, rather than a memory location. The rest of the modes will deal with addresses.
-- *Direct addressing mode*: TODO
-- *Indexed addressing mode*: TODO
-- *Indirect addressing mode*: TODO
-- *Base pointer addressing mode*: TODO
+- *Direct addressing mode*: The instruction contains the memory address to access.
+  - For example, I could say: "Please load this register with the data at address 2002."
+  - The computer would go directly to byte number 2002 and copy the contents into our register.
+- *Indexed addressing mode*: The instruction contains a memory address to access (like direct addressing mode) as well as an *index register* to offset that address.
+  - For example, I could specify address 2002 and an index register.
+  - If the index register contains the number 4, the actual address the data is loaded from would be 2002 + 4 = 2006.
+  - If you have a set of numbers starting at location 2002, you can cycle between each of them using an index register -> indexing into each element of an array of numbers/data.
+  - On x86 processors, you can also specify a *multiplier* for the index. This allows you to access memory a byte at a time or a word at a time (4 bytes).
+  - If you are accessing an entire word, your index will need to be multiplied by 4 to get the exact location of the 4th element form your address.
+  - For example, to access the 4th *byte* from location 2002, load the index register with 3 (remember that we start counting at 0) and set the multiplier to 1 since you are going 1 byte at a time. This will get you to location 2002 + 3 x 1 = 2005.
+  - However, if you wanted to access the 4th *word* from location 2002, load the index register with 3 and set the multiplier to 4. This will get you to location 2002 + 3 x 4 = 2014.
+- *Indirect addressing mode*: The instruction contains a register that contains a pointer to where the data should be accessed.
+  - For example, if we specify the ~%eax~ register, and the ~%eax~ register contains the value 4, then whatever value was at /memory location/ 4 will be used.
+  - In direct addressing, we would just load the value 4 directly. However, in indirect addressing, we use 4 as the address to use to find the data we want.
+- *Base pointer addressing mode*: Similar to indirect addressing, but there is also a number called the *offset* to add to the register's value before using it for lookup.
 
 *7. What does the instruction pointer do?*
 
