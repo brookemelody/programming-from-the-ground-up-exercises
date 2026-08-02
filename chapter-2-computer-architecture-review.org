@@ -29,7 +29,7 @@
 
 *2. What is a register? How would computation be more difficult without registers?*
 
-A register is a special, high-speed memory location contained within the processor itself, unlike memory on the outside of the processor.
+A register is a special, high-speed memory location contained within the processor itself, unlike memory on the outside of the processor. Registers are what the computer uses for computation; they keep track of the contents of numbers that you are currently manipulating.
 
 Computation would be more difficult without registers because the processor would have to perform operations by accessing data stored in far-away memory locations outside of the processor (using the data bus). This would make computation significantly slower and overall less efficient due to constantly having to access data in memory outside of the processor.
 
@@ -72,6 +72,10 @@ Processors have various different ways of accessing data, known as *addressing m
 - *Base pointer addressing mode*: Similar to indirect addressing, but there is also a number called the *offset* to add to the register's value before using it for lookup.
 
 *7. What does the instruction pointer do?*
+
+Addresses which are stored in memory are also called *pointers.* Instead of having a regular value in them, they point you to a different location in memory.
+
+Computer instructions are also stored in memory, the same way that other data is stored. The only way the computer knows that a memory location is an instruction is that a special-purpose register, the *instruction pointer,* points to it. If the instruction pointer points to a memory word, it is loaded as an instruction.
 
 *** Use the Concepts
 
