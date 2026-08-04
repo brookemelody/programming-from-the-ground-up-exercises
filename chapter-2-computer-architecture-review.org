@@ -81,6 +81,18 @@ Computer instructions are also stored in memory, the same way that other data is
 
 *1. What data would you use in an employee record? How would you lay it out in memory?*
 
+In an employee record, I would use the following data laid out in memory as such:
+
+- Start of Record:
+  - Employee's name pointer (1 word) - start of record
+  - Employee's address pointer (1 word) - start of record + 4 bytes
+  - Employee's age (1 word) - start of record + 8 bytes
+  - Employee's id number (1 word) - start of record + 12 bytes
+
+This way, instead of directly storing the employee's name, address, etc., we store a /pointer/ to the respective data in the record. This helps circumvent the problem of having to explicitly define a static limit to the size of each piece of data (e.g. limiting the name to 50 bytes/ASCII characters). Instead, the actual data is stored elsewhere in memory.
+
+If the data in the record were stored directly, if the lengths of the data fields were somehow changed, then there would be no way to determine the correct offset at which the next data field starts in the record, or for the next record in the block of memory. Therefore, almost all records are of fixed lengths and variable-length data is usually stored separately from the rest of the record.
+
 *2. If I had the pointer at the beginning of the employee record above, and wanted to access a particular piece of data inside of it, what addressing mode would I use?*
 
 *3. In base pointer addressing mode, if you have a register holding the value 3122, and an offset of 20, what address would you being trying to access?*
